@@ -89,7 +89,7 @@ func (loginService *LoginService) getPermissionPermission(userId int64) []string
 
 var store = base64Captcha.DefaultMemStore
 
-//生成driver，      高，宽，背景文字的干扰，画线条数，背景颜色的指针，字体
+// 生成driver，      高，宽，背景文字的干扰，画线条数，背景颜色的指针，字体
 var driver = base64Captcha.NewDriverMath(38, 106, 0, 0, &color.RGBA{0, 0, 0, 0}, nil, []string{"wqy-microhei.ttc"})
 
 func (loginService *LoginService) GenerateCode() (m *systemModels.CaptchaVo) {

@@ -7,10 +7,10 @@ import (
 )
 
 type LoginBody struct {
-	Username string `json:"username" binding:"required"` //用户名
-	Password string `json:"password" binding:"required"` //密码
-	Code     string `json:"code" binding:"required"`     //验证码
-	Uuid     string `json:"uuid" binding:"required"`     //uuid
+	Username string `json:"username" binding:"required"` // 用户名
+	Password string `json:"password" binding:"required"` // 密码
+	Code     string `json:"code" binding:"required"`     // 验证码
+	Uuid     string `json:"uuid" binding:"required"`     // uuid
 }
 
 type LoginUser struct {
@@ -32,7 +32,7 @@ type User struct {
 	UserName    string                 `json:"userName" db:"user_name" db:"user_name"`
 	NickName    string                 `json:"nickName" db:"nick_name" db:"nick_name"`
 	Email       *string                `json:"email" db:"email" db:"email"`
-	Phonenumber *string                `json:"phonenumber"db:"phonenumber" db:"phonenumber"`
+	Phonenumber *string                `json:"phonenumber" db:"phonenumber" db:"phonenumber"`
 	Sex         string                 `json:"sex" db:"sex" db:"sex"`
 	Avatar      *string                `json:"avatar" db:"avatar" db:"avatar"`
 	Password    string                 `json:"-" db:"password" db:"password"`

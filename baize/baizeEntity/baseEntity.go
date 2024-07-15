@@ -9,10 +9,10 @@ import (
 )
 
 type BaseEntity struct {
-	CreateBy   int64      `json:"createBy" db:"create_by"`                           //创建人
-	CreateTime *BaiZeTime `json:"createTime" db:"create_time" swaggertype:"integer"` //创建时间
-	UpdateBy   int64      `json:"updateBy" db:"update_by"`                           //修改人
-	UpdateTime *BaiZeTime `json:"updateTime" db:"update_time" swaggertype:"integer"` //修改时间
+	CreateBy   int64      `json:"createBy" db:"create_by"`                           // 创建人
+	CreateTime *BaiZeTime `json:"createTime" db:"create_time" swaggertype:"integer"` // 创建时间
+	UpdateBy   int64      `json:"updateBy" db:"update_by"`                           // 修改人
+	UpdateTime *BaiZeTime `json:"updateTime" db:"update_time" swaggertype:"integer"` // 修改时间
 }
 type BaseEntityAdd struct {
 	CreateBy   int64      `db:"create_by" swaggerignore:"true"`
@@ -41,10 +41,10 @@ func (b *BaseEntityEdit) SetUpdateBy(userId int64) {
 
 type BaseEntityDQL struct {
 	DataScope string `swaggerignore:"true"`
-	OrderBy   string `form:"orderBy" `          //排序字段
-	IsAsc     string `form:"isAsc" `            //排序规则  降序desc   asc升序
-	Page      int64  `form:"page" default:"1"`  //第几页
-	Size      int64  `form:"size" default:"10"` //数量
+	OrderBy   string `form:"orderBy" `          // 排序字段
+	IsAsc     string `form:"isAsc" `            // 排序规则  降序desc   asc升序
+	Page      int64  `form:"page" default:"1"`  // 第几页
+	Size      int64  `form:"size" default:"10"` // 数量
 }
 
 func (b *BaseEntityDQL) GetLimit() string {

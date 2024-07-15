@@ -46,8 +46,8 @@ var StartTime = gtime.Datetime()
 
 func NewServer() *server {
 	server := new(server)
-	server.CpuNum, _ = cpu.Counts(false)      //cpu物理核心
-	server.CpuNumThread, _ = cpu.Counts(true) //核心数
+	server.CpuNum, _ = cpu.Counts(false)      // cpu物理核心
+	server.CpuNumThread, _ = cpu.Counts(true) // 核心数
 
 	cpuInfo, err := cpu.Percent(time.Duration(time.Second), false)
 	if err == nil {
@@ -85,13 +85,13 @@ func NewServer() *server {
 		server.SysOsArch = sysInfo.KernelArch
 	}
 
-	server.GoName = "GoLang"             //语言环境
-	server.GoVersion = runtime.Version() //版本
+	server.GoName = "GoLang"             // 语言环境
+	server.GoVersion = runtime.Version() // 版本
 	gtime.Date()
-	server.GoStartTime = StartTime //启动时间
+	server.GoStartTime = StartTime // 启动时间
 
-	server.GoRunTime = timeUtils.GetHourDiffer(StartTime, gtime.Datetime()) //运行时长
-	server.GoHome = runtime.GOROOT()                                        //安装路径
+	server.GoRunTime = timeUtils.GetHourDiffer(StartTime, gtime.Datetime()) // 运行时长
+	server.GoHome = runtime.GOROOT()                                        // 安装路径
 
 	curDir, err := os.Getwd()
 
@@ -99,9 +99,9 @@ func NewServer() *server {
 		server.GoUserDir = curDir
 	}
 
-	//服务器磁盘信息
+	// 服务器磁盘信息
 
-	diskInfo, err := disk.Partitions(true) //所有分区
+	diskInfo, err := disk.Partitions(true) // 所有分区
 	server.DiskList = make([]disk.UsageStat, 0, len(diskInfo))
 	if err == nil {
 		for _, p := range diskInfo {

@@ -97,7 +97,7 @@ func (d *Data) GetSlaveDb() *sqlx.DB {
 
 var curIndex int
 
-//roundRobinBalance 轮询获取从数据库
+// roundRobinBalance 轮询获取从数据库
 func (d *Data) roundRobinBalance() *sqlx.DB {
 	lens := len(d.slaveDb)
 	if curIndex >= lens {
@@ -107,7 +107,7 @@ func (d *Data) roundRobinBalance() *sqlx.DB {
 	return d.slaveDb[curIndex]
 }
 
-//randomBalance 随机获取从数据库
+// randomBalance 随机获取从数据库
 func (d *Data) randomBalance() *sqlx.DB {
 	curIndex := rand.Intn(len(d.slaveDb))
 	return d.slaveDb[curIndex]

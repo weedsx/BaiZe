@@ -10,7 +10,7 @@ func InitGetUser(router *gin.RouterGroup, loginController *systemController.Logi
 
 }
 func InitLoginRouter(router *gin.RouterGroup, loginController *systemController.LoginController) {
-	router.GET("/captchaImage", loginController.GetCode) //获取验证码
-	router.POST("/login", loginController.Login)         //登录
+	router.GET("/captchaImage", loginController.GetCode) // 获取验证码
+	router.POST("/login", loginController.Login)         // 登录
 	router.POST("/logout", loginController.Logout)
 }
